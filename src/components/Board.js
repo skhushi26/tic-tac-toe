@@ -75,6 +75,7 @@ function Board(props) {
   return (
     <>
       <div className="board mb-4">
+        {winnerText && <span className="blink mr-3">{winnerText}</span>}
         <div className="board-row">
           {renderSquare(0)}
           {renderSquare(1)}
@@ -91,7 +92,7 @@ function Board(props) {
           {renderSquare(8)}
         </div>
       </div>
-      {winnerText && <span className="blink mr-3">{winnerText}</span>}
+
       <Button variant="secondary" onClick={resetClick}>
         Reset
       </Button>

@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.css";
 import Board from "./Board";
+import "./playerForm.css";
 import { Form, Col, InputGroup, Row, Button } from "react-bootstrap";
 
 function PlayerForm(props) {
@@ -36,8 +37,13 @@ function PlayerForm(props) {
               <Card.Text>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                   <Row className="mb-2">
-                    <Form.Group as={Col} md="4" controlId="validationCustom01">
-                      <Form.Label>First Player Name</Form.Label>
+                    <Form.Group
+                      as={Col}
+                      md="4"
+                      controlId="validationCustom01"
+                      className="tl"
+                    >
+                      <Form.Label className="tl">First Player Name</Form.Label>
                     </Form.Group>
                     <Form.Group as={Col} md="4" controlId="validationCustom01">
                       <Form.Control
@@ -54,14 +60,19 @@ function PlayerForm(props) {
                     </Form.Group>
                   </Row>
                   <Row className="mb-2">
-                    <Form.Group as={Col} md="4" controlId="validationCustom01">
+                    <Form.Group
+                      as={Col}
+                      md="4"
+                      controlId="validationCustom01"
+                      className="tl"
+                    >
                       <Form.Label>First Player Sign</Form.Label>
                     </Form.Group>
                     <Form.Group as={Col} md="4" controlId="validationCustom02">
                       <Form.Control
                         required
                         type="text"
-                        placeholder="First Player Sign"
+                        placeholder="Enter first player sign"
                         defaultValue="X"
                         onChange={(e) => setFirstPlayerSign(e.target.value)}
                       />
@@ -73,8 +84,13 @@ function PlayerForm(props) {
                   </Row>
                   <br />
                   <Row className="mb-2">
-                    <Form.Group as={Col} md="4" controlId="validationCustom01">
-                      <Form.Label>Second Player Name</Form.Label>
+                    <Form.Group
+                      as={Col}
+                      md="4"
+                      controlId="validationCustom01"
+                      className="tl"
+                    >
+                      <Form.Label className="tl">Second Player Name</Form.Label>
                     </Form.Group>
                     <Form.Group as={Col} md="4" controlId="validationCustom02">
                       <Form.Control
@@ -91,14 +107,19 @@ function PlayerForm(props) {
                     </Form.Group>
                   </Row>
                   <Row className="mb-2">
-                    <Form.Group as={Col} md="4" controlId="validationCustom01">
-                      <Form.Label>Second Player Sign</Form.Label>
+                    <Form.Group
+                      as={Col}
+                      md="4"
+                      controlId="validationCustom01"
+                      className="tl"
+                    >
+                      <Form.Label className="tl">Second Player Sign</Form.Label>
                     </Form.Group>
                     <Form.Group as={Col} md="4" controlId="validationCustom02">
                       <Form.Control
                         required
                         type="text"
-                        placeholder="Second Player Sign"
+                        placeholder="Enter second player sign"
                         defaultValue="O"
                         onChange={(e) => setSecondPlayerSign(e.target.value)}
                       />

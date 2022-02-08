@@ -1,6 +1,9 @@
 .board {
-  text-align: center;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .board-row {
@@ -9,13 +12,16 @@
 }
 
 .blink {
-  width: 200px;
-  height: 50px;
+  width: 250px;
+  height: 80px;
   background-color: rgb(179, 110, 179);
   padding: 15px;
   text-align: center;
   line-height: 50px;
+  position: absolute;
+  border-radius: 10px;
 }
+
 span {
   font-size: 25px;
   font-family: cursive;
