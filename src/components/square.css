@@ -2,13 +2,13 @@
   height: 120px;
   width: 120px;
   font-size: 50px;
-  background-color: #e0e0e0;
+  background-color: #eff0f3;
 }
 
 .square-btn.active {
   /* box-shadow: 12px 12px 16px 0 #c5c5c5 inset, -8px -8px 12px 0 #c5c5c5 inset; */
-  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
-    inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
-
+  /* box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+    inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5); */
+  box-shadow: inset 7px 7px 6px #bfc3cf, inset -6px -6px 10px #fff;
   cursor: not-allowed;
 }
