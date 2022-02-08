@@ -4,7 +4,7 @@ import "./square.css";
 function Square(props) {
   return (
     <button
-      className="square-btn"
+      className={`square-btn ${props.value ? "active" : ""}`}
       onClick={() => props.onClick()}
       disabled={props.clickDisable}
     >

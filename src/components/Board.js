@@ -5,6 +5,7 @@ import PlayerForm from "./PlayerForm";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.css";
+import Confitte from "./Confitte";
 
 function Board(props) {
   const [square, setSquare] = useState(Array(9).fill(null));
@@ -17,6 +18,10 @@ function Board(props) {
 
   const resetClick = () => {
     props.setShowBoard(false);
+    props.setFirstPlayer("Player 1");
+    props.setFirstPlayerSign("X");
+    props.setSecondPlayer("Player 2");
+    props.setSecondPlayerSign("O");
   };
 
   const renderSquare = (i) => {
@@ -47,8 +52,6 @@ function Board(props) {
         setWinnerText("It's a tie");
         setClickDisable(true);
       }
-    } else {
-      alert("Not possible to change");
     }
   };
 
@@ -93,11 +96,13 @@ function Board(props) {
         </div>
       </div>
 
-      <Button variant="secondary" onClick={resetClick}>
+      <Button variant="secondary" onClick={resetClick} className="button-reset">
         Reset
       </Button>
       {!props.showBoard && <PlayerForm />}
-      {!winnerText && <h5 className="mt-3">Turn : {status}</h5>}
+      {!winnerText && <h5>Turn : {status}</h5>}
+      {/* <div className="confitte">{winnerText && <Confitte winner={winnerText} />}</div> */}
+      <Confitte winner={winnerText} />
     </>
   );
 }

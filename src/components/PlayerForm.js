@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Board from "./Board";
 import "./playerForm.css";
 import { Form, Col, InputGroup, Row, Button } from "react-bootstrap";
+import Confitte from "./Confitte";
 
 function PlayerForm(props) {
   const [firstPlayer, setFirstPlayer] = useState("Player 1");
@@ -26,6 +27,10 @@ function PlayerForm(props) {
 
   return (
     <>
+      {/* <div className="confitte">
+        <Confitte />
+      </div> */}
+
       {!showBoard && (
         <div
           style={{ display: "flex", justifyContent: "center" }}
@@ -144,6 +149,10 @@ function PlayerForm(props) {
           secondPlayer={secondPlayer}
           firstPlayerSign={firstPlayerSign}
           secondPlayerSign={secondPlayerSign}
+          setFirstPlayer={setFirstPlayer}
+          setFirstPlayerSign={setFirstPlayerSign}
+          setSecondPlayer={setSecondPlayer}
+          setSecondPlayerSign={setSecondPlayerSign}
           showBoard={showBoard}
           setShowBoard={setShowBoard}
         />
