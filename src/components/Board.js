@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./board.css";
 import Square from "./Square";
 import PlayerForm from "./PlayerForm";
-import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.css";
 import Confitte from "./Confitte";
@@ -12,7 +11,6 @@ function Board(props) {
   const [symbol, setSymbol] = useState(true);
   const [winnerText, setWinnerText] = useState("");
   const [clickDisable, setClickDisable] = useState(false);
-  const [reset, setReset] = useState(false);
 
   const status = symbol ? props.firstPlayer : props.secondPlayer;
 
@@ -32,6 +30,13 @@ function Board(props) {
         clickDisable={clickDisable}
       />
     );
+  };
+
+  const replayClick = () => {
+    setSquare(Array(9).fill(null));
+    setWinnerText("");
+    setClickDisable(false);
+    setSymbol(true);
   };
 
   const handleClick = (i) => {
@@ -96,9 +101,18 @@ function Board(props) {
         </div>
       </div>
 
+      <Button
+        variant="secondary"
+        onClick={replayClick}
+        className="button-reset mb-1"
+      >
+        Replay
+      </Button>
+      <br />
       <Button variant="secondary" onClick={resetClick} className="button-reset">
         Reset
       </Button>
+
       {!props.showBoard && <PlayerForm />}
       {!winnerText && <h5>Turn : {status}</h5>}
       {/* <div className="confitte">{winnerText && <Confitte winner={winnerText} />}</div> */}
